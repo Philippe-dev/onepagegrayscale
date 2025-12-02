@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="{{tpl:BlogLanguage}}">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+	
+	<title>{{tpl:BlogName encode_html="1"}}</title>
+	<meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogDescription cut_string="180" remove_html="1" encode_html="1"}}" />
+
+	{{tpl:include src="_head.html"}}
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="dc-home">
+
+	{{tpl:include src="_top.html"}}
+	
+    <!-- Intro Header -->
+    <header id="intro" class="intro">
+		
+		<div class="intro-body">
+			
+			<div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading"><i class="fa fa-leaf"></i> {{tpl:BlogName encode_html="1"}}</h1>
+                        <div class="intro-text">{{tpl:BlogDescription}}</div>
+                    </div>
+					
+					<div class="intro-footer col-md-8 col-md-offset-2">
+						<a href="#content" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+    </header>
+
+    <!-- Content Section -->
+	
+    <section id="content" class="container content-section text-center" role="main">
+		<div class="intro-body">
+            <div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<tpl:Entries>
+						<article id="post-{{tpl:LoopIndex}}" class="post {{tpl:EntryIfOdd}} {{tpl:EntryIfFirst}}" lang="{{tpl:EntryLang}}">
+							<!-- # New day date -->
+							<tpl:DateHeader><p class="day-date">{{tpl:EntryDate}}</p></tpl:DateHeader>
+
+							<h2 class="post-title">{{tpl:EntryTitle encode_html="1"}}</h2>
+
+							<!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+							{{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+							<div class="post-excerpt">{{tpl:EntryExcerpt}}</div>					
+							<div class="post-content">{{tpl:EntryContent}}</div>
+
+							<!-- # --BEHAVIOR-- publicEntryAfterContent -->
+							{{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+
+							<tpl:EntryIf has_attachment="1">
+							<tpl:Attachments>
+							<tpl:AttachmentsHeader>
+							<ul class="attachments">
+							</tpl:AttachmentsHeader>
+								<li>
+								<tpl:AttachmentIf is_mp3="1">
+								{{tpl:include src="_mp3_player.html"}} -
+								</tpl:AttachmentIf>
+								<tpl:AttachmentIf is_flv="1">
+								{{tpl:include src="_flv_player.html"}}
+								</tpl:AttachmentIf>
+								<tpl:AttachmentIf is_flv="0">
+								<a href="{{tpl:AttachmentURL}}"
+								title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})"><i class="fa fa-download fa-fw"></i> <span class="network-name">{{tpl:lang Download}} {{tpl:AttachmentTitle}} ({{tpl:AttachmentSize}})</span></a>
+								</tpl:AttachmentIf>
+								</li>
+							<tpl:AttachmentsFooter>
+							</ul>
+							</tpl:AttachmentsFooter>
+							</tpl:Attachments>
+							</tpl:EntryIf>
+						</article>
+						</tpl:Entries>
+						
+					</div>
+				</div>
+			</div>
+        </div>
+		
+    </section>
+
+    <!-- Footer -->
+    {{tpl:include src="_footer.html"}}
+
+</body>
+
+</html>
