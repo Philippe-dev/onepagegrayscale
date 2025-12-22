@@ -1,5 +1,9 @@
 # One Page Grayscale
 
+![Release 2.2](https://img.shields.io/badge/Release-2.2-b7d7ee)
+![Apache 2.0 license](https://img.shields.io/badge/License-Apache_2.0-a5cc52)
+![Dotclear 2.36](https://img.shields.io/badge/Dotclear-2.36-137bbb)
+
 ## Crédits
 
 Grayscale is a multipurpose, one page HTML theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). 
