@@ -1,8 +1,8 @@
 # One Page Grayscale
 
-![Release 2.2](https://img.shields.io/badge/Release-2.2-b7d7ee)
+![Release 2.3](https://img.shields.io/badge/Release-2.3-b7d7ee)
 ![Apache 2.0 license](https://img.shields.io/badge/License-Apache_2.0-a5cc52)
-![Dotclear 2.36](https://img.shields.io/badge/Dotclear-2.36-137bbb)
+![Dotclear 2.39](https://img.shields.io/badge/Dotclear-2.39-137bbb)
 
 ## Crédits
 

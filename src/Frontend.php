@@ -41,6 +41,6 @@ class Frontend
 
     public static function EntryPosition()
     {
-        return '<?php echo dcCore::app()->ctx->cur_loop->index()+1; ?>';
+        return '<?php echo App::frontend()->context()->posts->index()+1; ?>';
     }
 }

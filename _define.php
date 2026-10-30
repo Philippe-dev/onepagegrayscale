@@ -9,16 +9,18 @@
  * @copyright GPL-2.0
  */
 
-$this->registerModule(
-    'One Page Grayscale',
-    'One Page Grayscale Bootstrap theme for Dotclear',
-    'Start Bootstrap and Philippe aka amalgame',
-    '2.2',
-    [
-        'requires'          => [['core', '2.36']],
-        'standalone_config' => true,
-        'type'              => 'theme',
-        'tplset'            => 'mustek',
-        'overload'          => true,
-    ]
-);
+if (isset($this) && is_object($this) && method_exists($this, 'registerModule') && isset($this->id) && is_string($this->id)) {
+    $this->registerModule(
+        'One Page Grayscale',
+        'One Page Grayscale Bootstrap theme for Dotclear',
+        'Start Bootstrap and Philippe aka amalgame',
+        '2.3',
+        [
+            'requires'          => [['core', '2.36']],
+            'standalone_config' => true,
+            'type'              => 'theme',
+            'tplset'            => 'mustek',
+            'overload'          => true,
+        ]
+    );
+}
